@@ -45,9 +45,14 @@
       color: #ffcc00;
     }
 
+    .links {
+      display: flex;
+      justify-content: center;
+      gap: 10px; /* المسافة بين الأزرار */
+    }
+
     .links a {
       display: inline-block;
-      margin: 8px;
       padding: 10px 20px;
       background: #00ffff22;
       color: #fff;
@@ -55,8 +60,9 @@
       border-radius: 8px;
       transition: all 0.3s ease;
       border: 1px solid #00ffff55;
-      width: 100%; /* اجعل الأزرار بنفس العرض */
-      max-width: 250px; /* تعيين أقصى عرض للأزرار */
+      width: auto; /* جعل الأزرار بحجمها الطبيعي */
+      flex-grow: 1; /* جعل الأزرار تأخذ نفس الحجم */
+      text-align: center;
     }
 
     .links a:hover {
