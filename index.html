@@ -1,129 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Taha Chabat - Cyber Portfolio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-body {
-  font-family: 'Poppins', sans-serif;
-  background: black;
-  color: white;
-  overflow-x: hidden;
+body{
+  font-family:Poppins, sans-serif;
+  background:black;
+  color:white;
+  overflow:hidden;
 }
 
 /* MATRIX */
-#matrix {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1;
+#matrix{
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:-1;
 }
 
-/* MAIN CARD */
-.container {
-  max-width: 800px;
-  margin: 60px auto;
-  padding: 30px;
-  background: rgba(255,0,0,0.05);
-  border: 1px solid rgba(255,0,0,0.25);
-  border-radius: 16px;
-  backdrop-filter: blur(12px);
-  box-shadow: 0 0 30px rgba(255,0,0,0.15);
-  text-align: center;
+/* MAIN */
+.container{
+  max-width:750px;
+  margin:60px auto;
+  padding:30px;
+  background:rgba(255,0,0,0.05);
+  border:1px solid rgba(255,0,0,0.25);
+  border-radius:15px;
+  text-align:center;
+  backdrop-filter:blur(10px);
+  box-shadow:0 0 25px rgba(255,0,0,0.2);
 }
 
-/* GLITCH TITLE */
-.glitch {
-  font-size: 3rem;
-  color: #ff2b2b;
-  text-shadow: 0 0 10px red, 0 0 20px darkred;
-  animation: flicker 2s infinite;
+/* TITLE */
+.glitch{
+  font-size:3rem;
+  color:#ff2b2b;
+  text-shadow:0 0 10px red;
+  animation:flicker 2s infinite;
 }
 
-@keyframes flicker {
-  0%,100% {opacity:1;}
-  50% {opacity:0.6;}
+@keyframes flicker{
+  0%,100%{opacity:1;}
+  50%{opacity:0.6;}
 }
 
-p {
-  margin: 10px 0;
-  color: #ddd;
-  line-height: 1.6;
+p{
+  margin:10px 0;
+  color:#ddd;
 }
 
-.highlight {
-  color: #ff4d4d;
-  font-weight: bold;
+.highlight{
+  color:#ff4d4d;
+  font-weight:bold;
 }
 
 /* BUTTONS */
-.links {
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-  margin-top: 20px;
+.links{
+  display:flex;
+  gap:10px;
+  margin-top:20px;
+  justify-content:center;
 }
 
-.links a {
-  flex: 1;
-  padding: 12px;
-  border-radius: 10px;
-  text-decoration: none;
-  color: white;
-  background: rgba(255,0,0,0.12);
-  border: 1px solid rgba(255,0,0,0.4);
-  transition: 0.3s;
+.links a{
+  flex:1;
+  padding:12px;
+  text-decoration:none;
+  color:white;
+  border-radius:10px;
+  background:rgba(255,0,0,0.15);
+  border:1px solid rgba(255,0,0,0.4);
+  transition:0.3s;
 }
 
-.links a:hover {
-  transform: translateY(-3px);
-  background: rgba(255,0,0,0.3);
-  box-shadow: 0 0 15px red;
+.links a:hover{
+  background:rgba(255,0,0,0.35);
+  transform:translateY(-3px);
 }
 
 /* PROJECTS */
-.projects {
-  margin-top: 25px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 12px;
+.projects{
+  margin-top:20px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:10px;
 }
 
-.project {
-  padding: 15px;
-  border-radius: 10px;
-  background: rgba(255,0,0,0.08);
-  border: 1px solid rgba(255,0,0,0.3);
-  transition: 0.3s;
-}
-
-.project:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px red;
+.project{
+  padding:15px;
+  border-radius:10px;
+  background:rgba(255,0,0,0.08);
+  border:1px solid rgba(255,0,0,0.3);
 }
 
 /* TERMINAL */
-.terminal {
-  margin-top: 25px;
-  background: black;
-  border: 1px solid red;
-  padding: 15px;
-  font-family: monospace;
-  color: #ff4d4d;
-  height: 140px;
-  text-align: left;
-  overflow: hidden;
-  box-shadow: 0 0 15px rgba(255,0,0,0.2);
+.terminal{
+  margin-top:20px;
+  height:120px;
+  background:black;
+  border:1px solid red;
+  padding:10px;
+  text-align:left;
+  font-family:monospace;
+  color:#ff4d4d;
+  overflow:hidden;
 }
 </style>
 </head>
@@ -136,86 +127,96 @@ p {
 
 <h1 class="glitch">Taha Chabat</h1>
 
-<p>I'm a <span class="highlight">17-year-old developer</span> focused on AI, cybersecurity & ethical hacking.</p>
-<p>🌍 Morocco | 🧠 AI • Cyber Security • Programming</p>
+<p>17-year-old developer passionate about AI & Cyber Security</p>
+<p><span class="highlight">Morocco | Ethical Hacking | Programming</span></p>
 
-<!-- BUTTONS -->
 <div class="links">
-  <a href="https://github.com/tahachabat">GitHub</a>
-  <a href="https://instagram.com/taha_chabat">Instagram</a>
+  <a href="https://github.com/">GitHub</a>
+  <a href="https://instagram.com/">Instagram</a>
 </div>
 
-<!-- PROJECTS -->
 <div class="projects">
   <div class="project">🔐 Password Generator</div>
-  <div class="project">🌐 Network Scanner (Python)</div>
-  <div class="project">🧠 AI Image Enhancer</div>
+  <div class="project">🌐 Network Scanner</div>
+  <div class="project">🧠 AI Tool</div>
 </div>
 
-<!-- TERMINAL -->
 <div class="terminal" id="terminal"></div>
 
 </div>
 
 <script>
 
-/* MATRIX EFFECT */
+/* MATRIX FIXED */
 const canvas = document.getElementById("matrix");
 const ctx = canvas.getContext("2d");
 
-canvas.height = window.innerHeight;
-canvas.width = window.innerWidth;
+function resize(){
+  canvas.height = window.innerHeight;
+  canvas.width = window.innerWidth;
+}
+resize();
 
 let letters = "01ABCDEFGHIJKLMNOPQRSTUVWXYZ#$%&*".split("");
 const fontSize = 14;
-const columns = canvas.width / fontSize;
-const drops = Array(Math.floor(columns)).fill(1);
+const columns = () => canvas.width / fontSize;
+const drops = [];
 
-function draw() {
-  ctx.fillStyle = "rgba(0,0,0,0.08)";
+function initDrops(){
+  for(let i=0;i<columns();i++){
+    drops[i]=1;
+  }
+}
+initDrops();
+
+function draw(){
+  ctx.fillStyle="rgba(0,0,0,0.08)";
   ctx.fillRect(0,0,canvas.width,canvas.height);
 
-  ctx.fillStyle = "#ff2b2b";
-  ctx.font = fontSize + "px monospace";
+  ctx.fillStyle="#ff2b2b";
+  ctx.font=fontSize+"px monospace";
 
-  for (let i = 0; i < drops.length; i++) {
-    const text = letters[Math.floor(Math.random()*letters.length)];
-    ctx.fillText(text, i*fontSize, drops[i]*fontSize);
+  for(let i=0;i<drops.length;i++){
+    let text=letters[Math.floor(Math.random()*letters.length)];
+    ctx.fillText(text,i*fontSize,drops[i]*fontSize);
 
-    if (drops[i]*fontSize > canvas.height && Math.random()>0.975) {
+    if(drops[i]*fontSize>canvas.height && Math.random()>0.975){
       drops[i]=0;
     }
+
     drops[i]++;
   }
 }
 
 setInterval(draw,33);
 
-/* TERMINAL TYPE EFFECT */
-const terminal = document.getElementById("terminal");
+window.addEventListener("resize",()=>{
+  resize();
+  initDrops();
+});
 
-const lines = [
+/* TERMINAL */
+const terminal=document.getElementById("terminal");
+
+const lines=[
 "Booting system...",
-"Loading AI modules...",
-"Initializing cyber tools...",
+"Loading modules...",
 "Scanning network...",
 "Access granted ✔",
-"Welcome to hacker mode 🔴"
+"Hacker mode activated 🔴"
 ];
 
-let i = 0;
+let i=0;
 
-function type() {
-  if(i < lines.length){
-    terminal.innerHTML += "> " + lines[i] + "<br>";
+function type(){
+  if(i<lines.length){
+    terminal.innerHTML+="> "+lines[i]+"<br>";
     i++;
-    setTimeout(type, 700);
+    setTimeout(type,700);
   }
 }
 
 type();
-
-window.addEventListener("resize",()=>location.reload());
 
 </script>
 
