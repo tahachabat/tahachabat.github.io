@@ -1,103 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Taha Chabat - Cyber Portfolio</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Taha Chabat - Cyber Portfolio</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: black;
-      color: white;
-      overflow-x: hidden;
-    }
+body {
+  font-family: 'Poppins', sans-serif;
+  background: black;
+  color: white;
+  overflow-x: hidden;
+}
 
-    /* MATRIX BACKGROUND */
-    #matrix {
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: -1;
-    }
+/* MATRIX */
+#matrix {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
 
-    .container {
-      max-width: 750px;
-      margin: 80px auto;
-      padding: 30px;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 0, 0, 0.3);
-      border-radius: 15px;
-      backdrop-filter: blur(10px);
-      text-align: center;
-      box-shadow: 0 0 25px rgba(255, 0, 0, 0.2);
-    }
+/* MAIN CARD */
+.container {
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 30px;
+  background: rgba(255,0,0,0.05);
+  border: 1px solid rgba(255,0,0,0.25);
+  border-radius: 16px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 30px rgba(255,0,0,0.15);
+  text-align: center;
+}
 
-    .glitch {
-      font-size: 2.8rem;
-      color: #ff2b2b;
-      text-shadow: 0 0 10px rgba(255,0,0,0.5);
-      animation: flicker 2s infinite;
-    }
+/* GLITCH TITLE */
+.glitch {
+  font-size: 3rem;
+  color: #ff2b2b;
+  text-shadow: 0 0 10px red, 0 0 20px darkred;
+  animation: flicker 2s infinite;
+}
 
-    @keyframes flicker {
-      0%,100% { opacity: 1; }
-      50% { opacity: 0.7; }
-    }
+@keyframes flicker {
+  0%,100% {opacity:1;}
+  50% {opacity:0.6;}
+}
 
-    p {
-      margin: 15px 0;
-      color: #ddd;
-      line-height: 1.6;
-    }
+p {
+  margin: 10px 0;
+  color: #ddd;
+  line-height: 1.6;
+}
 
-    .highlight {
-      color: #ff4d4d;
-      font-weight: bold;
-    }
+.highlight {
+  color: #ff4d4d;
+  font-weight: bold;
+}
 
-    /* IMAGE */
-    .hero-img {
-      width: 100%;
-      max-width: 520px;
-      margin-top: 15px;
-      border-radius: 12px;
-      border: 1px solid rgba(255,0,0,0.4);
-      box-shadow: 0 0 20px rgba(255,0,0,0.25);
-    }
+/* BUTTONS */
+.links {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 20px;
+}
 
-    /* LINKS */
-    .links {
-      display: flex;
-      gap: 10px;
-      justify-content: center;
-      margin-top: 20px;
-    }
+.links a {
+  flex: 1;
+  padding: 12px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: white;
+  background: rgba(255,0,0,0.12);
+  border: 1px solid rgba(255,0,0,0.4);
+  transition: 0.3s;
+}
 
-    .links a {
-      flex: 1;
-      padding: 10px;
-      background: rgba(255,0,0,0.15);
-      border: 1px solid rgba(255,0,0,0.4);
-      border-radius: 8px;
-      color: white;
-      text-decoration: none;
-      transition: 0.3s;
-    }
+.links a:hover {
+  transform: translateY(-3px);
+  background: rgba(255,0,0,0.3);
+  box-shadow: 0 0 15px red;
+}
 
-    .links a:hover {
-      background: rgba(255,0,0,0.35);
-      transform: scale(1.05);
-    }
-  </style>
+/* PROJECTS */
+.projects {
+  margin-top: 25px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.project {
+  padding: 15px;
+  border-radius: 10px;
+  background: rgba(255,0,0,0.08);
+  border: 1px solid rgba(255,0,0,0.3);
+  transition: 0.3s;
+}
+
+.project:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px red;
+}
+
+/* TERMINAL */
+.terminal {
+  margin-top: 25px;
+  background: black;
+  border: 1px solid red;
+  padding: 15px;
+  font-family: monospace;
+  color: #ff4d4d;
+  height: 140px;
+  text-align: left;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(255,0,0,0.2);
+}
+</style>
 </head>
 
 <body>
@@ -106,27 +134,31 @@
 
 <div class="container">
 
-  <h1 class="glitch">Taha Chabat</h1>
+<h1 class="glitch">Taha Chabat</h1>
 
-  <p>
-    I'm a <span class="highlight">17-year-old developer</span> passionate about AI, cybersecurity and ethical hacking.
-  </p>
+<p>I'm a <span class="highlight">17-year-old developer</span> focused on AI, cybersecurity & ethical hacking.</p>
+<p>🌍 Morocco | 🧠 AI • Cyber Security • Programming</p>
 
-  <p>🌍 Morocco | 🧠 AI & Cyber Security Enthusiast</p>
+<!-- BUTTONS -->
+<div class="links">
+  <a href="https://github.com/tahachabat">GitHub</a>
+  <a href="https://instagram.com/taha_chabat">Instagram</a>
+</div>
 
-  <!-- 🔥 NEW IMAGE -->
-  <img class="hero-img"
-       src="https://images.openai.com/static-rsc-4/Gk5dYY-psmqO8IV5QSzY7fHOJPDHrmcd7hNQ6D-b_OH268-28C5P78XEm2dF561Bbb5qdgO-vgIk8JO6Y6ulWDtXWgqEMZH5cfCo0qgTOqPCaVW46DMGUN2jkjRF-c50j7iZSoXSao4oKziwpJER2PVLfRUT_tCWk5ocdsYhF6dCr2nlc7iphplpIdxYhRnU?purpose=inline"
-       alt="Cyber hacking">
+<!-- PROJECTS -->
+<div class="projects">
+  <div class="project">🔐 Password Generator</div>
+  <div class="project">🌐 Network Scanner (Python)</div>
+  <div class="project">🧠 AI Image Enhancer</div>
+</div>
 
-  <div class="links">
-    <a href="https://github.com/tahachabat">GitHub</a>
-    <a href="https://instagram.com/taha_chabat">Instagram</a>
-  </div>
+<!-- TERMINAL -->
+<div class="terminal" id="terminal"></div>
 
 </div>
 
 <script>
+
 /* MATRIX EFFECT */
 const canvas = document.getElementById("matrix");
 const ctx = canvas.getContext("2d");
@@ -148,19 +180,43 @@ function draw() {
 
   for (let i = 0; i < drops.length; i++) {
     const text = letters[Math.floor(Math.random()*letters.length)];
-    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+    ctx.fillText(text, i*fontSize, drops[i]*fontSize);
 
-    if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-      drops[i] = 0;
+    if (drops[i]*fontSize > canvas.height && Math.random()>0.975) {
+      drops[i]=0;
     }
-
     drops[i]++;
   }
 }
 
-setInterval(draw, 33);
+setInterval(draw,33);
 
-window.addEventListener("resize", () => location.reload());
+/* TERMINAL TYPE EFFECT */
+const terminal = document.getElementById("terminal");
+
+const lines = [
+"Booting system...",
+"Loading AI modules...",
+"Initializing cyber tools...",
+"Scanning network...",
+"Access granted ✔",
+"Welcome to hacker mode 🔴"
+];
+
+let i = 0;
+
+function type() {
+  if(i < lines.length){
+    terminal.innerHTML += "> " + lines[i] + "<br>";
+    i++;
+    setTimeout(type, 700);
+  }
+}
+
+type();
+
+window.addEventListener("resize",()=>location.reload());
+
 </script>
 
 </body>
