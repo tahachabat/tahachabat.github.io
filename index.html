@@ -16,9 +16,9 @@
 
     body {
       font-family: 'Poppins', sans-serif;
+      background: black;
       color: white;
       overflow-x: hidden;
-      background: black;
     }
 
     /* MATRIX BACKGROUND */
@@ -29,11 +29,9 @@
       z-index: -1;
     }
 
-    /* MAIN CONTAINER */
     .container {
       max-width: 750px;
-      margin: auto;
-      margin-top: 80px;
+      margin: 80px auto;
       padding: 30px;
       background: rgba(255, 255, 255, 0.05);
       border: 1px solid rgba(255, 0, 0, 0.3);
@@ -43,25 +41,22 @@
       box-shadow: 0 0 25px rgba(255, 0, 0, 0.2);
     }
 
-    /* GLITCH TITLE */
     .glitch {
       font-size: 2.8rem;
-      font-weight: bold;
       color: #ff2b2b;
-      position: relative;
       text-shadow: 0 0 10px rgba(255,0,0,0.5);
       animation: flicker 2s infinite;
     }
 
     @keyframes flicker {
-      0%, 100% { opacity: 1; }
+      0%,100% { opacity: 1; }
       50% { opacity: 0.7; }
     }
 
     p {
       margin: 15px 0;
-      line-height: 1.6;
       color: #ddd;
+      line-height: 1.6;
     }
 
     .highlight {
@@ -69,62 +64,38 @@
       font-weight: bold;
     }
 
-    /* PROJECT CARDS */
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 15px;
-      margin-top: 20px;
+    /* IMAGE */
+    .hero-img {
+      width: 100%;
+      max-width: 520px;
+      margin-top: 15px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,0,0,0.4);
+      box-shadow: 0 0 20px rgba(255,0,0,0.25);
     }
 
-    .card {
-      background: rgba(255, 0, 0, 0.08);
-      border: 1px solid rgba(255, 0, 0, 0.3);
-      padding: 15px;
-      border-radius: 10px;
-      transition: 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
-    }
-
-    /* BUTTONS */
+    /* LINKS */
     .links {
-      margin-top: 20px;
       display: flex;
       gap: 10px;
       justify-content: center;
+      margin-top: 20px;
     }
 
     .links a {
       flex: 1;
       padding: 10px;
-      text-decoration: none;
-      color: white;
       background: rgba(255,0,0,0.15);
       border: 1px solid rgba(255,0,0,0.4);
       border-radius: 8px;
+      color: white;
+      text-decoration: none;
       transition: 0.3s;
     }
 
     .links a:hover {
       background: rgba(255,0,0,0.35);
       transform: scale(1.05);
-    }
-
-    /* TERMINAL STYLE */
-    .terminal {
-      margin-top: 20px;
-      text-align: left;
-      background: black;
-      border: 1px solid red;
-      padding: 10px;
-      font-family: monospace;
-      color: #ff4d4d;
-      height: 120px;
-      overflow: hidden;
     }
   </style>
 </head>
@@ -143,24 +114,15 @@
 
   <p>🌍 Morocco | 🧠 AI & Cyber Security Enthusiast</p>
 
-  <img src="https://images.openai.com/static-rsc-4/Gk5dYY-psmqO8IV5QSzY7fHOJPDHrmcd7hNQ6D-b_OH268-28C5P78XEm2dF561Bbb5qdgO-vgIk8JO6Y6ulWDtXWgqEMZH5cfCo0qgTOqPCaVW46DMGUN2jkjRF-c50j7iZSoXSao4oKziwpJER2PVLfRUT_tCWk5ocdsYhF6dCr2nlc7iphplpIdxYhRnU?purpose=inline"
-       style="width:100%; border-radius:10px; margin-top:10px; border:1px solid red;">
+  <!-- 🔥 NEW IMAGE -->
+  <img class="hero-img"
+       src="https://images.openai.com/static-rsc-4/Gk5dYY-psmqO8IV5QSzY7fHOJPDHrmcd7hNQ6D-b_OH268-28C5P78XEm2dF561Bbb5qdgO-vgIk8JO6Y6ulWDtXWgqEMZH5cfCo0qgTOqPCaVW46DMGUN2jkjRF-c50j7iZSoXSao4oKziwpJER2PVLfRUT_tCWk5ocdsYhF6dCr2nlc7iphplpIdxYhRnU?purpose=inline"
+       alt="Cyber hacking">
 
-  <!-- PROJECTS -->
-  <div class="cards">
-    <div class="card">🔐 Password Generator Tool</div>
-    <div class="card">🧠 AI Image Enhancer</div>
-    <div class="card">🌐 Network Scanner (Python)</div>
-  </div>
-
-  <!-- LINKS -->
   <div class="links">
     <a href="https://github.com/tahachabat">GitHub</a>
     <a href="https://instagram.com/taha_chabat">Instagram</a>
   </div>
-
-  <!-- TERMINAL -->
-  <div class="terminal" id="terminal"></div>
 
 </div>
 
@@ -172,27 +134,25 @@ const ctx = canvas.getContext("2d");
 canvas.height = window.innerHeight;
 canvas.width = window.innerWidth;
 
-let letters = "01ABCDEFGHIJKLMNOPQRSTUVWXYZ#$%&*";
-letters = letters.split("");
-
+let letters = "01ABCDEFGHIJKLMNOPQRSTUVWXYZ#$%&*".split("");
 const fontSize = 14;
 const columns = canvas.width / fontSize;
-
 const drops = Array(Math.floor(columns)).fill(1);
 
 function draw() {
-  ctx.fillStyle = "rgba(0, 0, 0, 0.08)";
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = "rgba(0,0,0,0.08)";
+  ctx.fillRect(0,0,canvas.width,canvas.height);
 
   ctx.fillStyle = "#ff2b2b";
   ctx.font = fontSize + "px monospace";
 
   for (let i = 0; i < drops.length; i++) {
-    const text = letters[Math.floor(Math.random() * letters.length)];
+    const text = letters[Math.floor(Math.random()*letters.length)];
     ctx.fillText(text, i * fontSize, drops[i] * fontSize);
 
-    if (drops[i] * fontSize > canvas.height && Math.random() > 0.975)
+    if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
       drops[i] = 0;
+    }
 
     drops[i]++;
   }
@@ -201,29 +161,6 @@ function draw() {
 setInterval(draw, 33);
 
 window.addEventListener("resize", () => location.reload());
-
-/* TERMINAL TYPING */
-const terminal = document.getElementById("terminal");
-
-const lines = [
-  "Initializing system...",
-  "Loading cyber modules...",
-  "Connecting to secure server...",
-  "Access granted ✔",
-  "Welcome hacker mode activated 🔴"
-];
-
-let i = 0;
-
-function typeLine() {
-  if (i < lines.length) {
-    terminal.innerHTML += lines[i] + "<br>";
-    i++;
-    setTimeout(typeLine, 800);
-  }
-}
-
-typeLine();
 </script>
 
 </body>
